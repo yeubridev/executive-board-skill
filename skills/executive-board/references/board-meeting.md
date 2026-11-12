@@ -70,10 +70,16 @@ The convening seat writes the question so that it can be answered:
 A vague question ("what should our strategy be?") produces six essays. If you cannot name the
 options, you are still in discovery; go do that first.
 
+The framing is the first half of the decision record. Create
+`board/decisions/D-NNNN-<slug>.md` now from `assets/templates/decision-record.md`, with status
+`proposed` and the context and options filled in, and send that file to the seats. Number it
+one above the highest in `board/DECISIONS.md`.
+
 ### Step 2 — Positions, written independently
 
 Each invited seat writes a position using `assets/templates/position-memo.md`: recommendation,
-confidence, three reasons, what worries it, what would change its mind.
+confidence, three reasons, what worries it, what would change its mind. It goes in the seat's
+own folder, as `board/<seat>/positions/D-NNNN.md`, so that every seat writes only in its lane.
 
 Each seat writes **before seeing any other seat's position**. This is the step that makes the
 meeting worth holding. A model shown an existing opinion tends to elaborate on it rather than
@@ -101,7 +107,8 @@ commit — the record lets the board find out later who was right.
 - Check `board/DECISIONS.md` for an earlier decision this one contradicts. If there is one,
   the new record supersedes it explicitly — two live decisions that disagree is how a board
   ends up building two products.
-- Write `board/decisions/D-NNNN-<slug>.md` from `assets/templates/decision-record.md`.
+- Complete the record started in step 1 — decision, reasons, dissent, consequences, revisit
+  condition — and link the position memos from it.
 - Add one line at the top of `board/DECISIONS.md`: `D-NNNN · date · decision · owner · door`.
 - Put follow-ups in `board/STATUS.md` with owners and dates.
 - If founder approval is needed, the status is `proposed` until it is given.

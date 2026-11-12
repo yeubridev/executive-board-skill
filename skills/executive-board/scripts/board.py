@@ -499,13 +499,29 @@ def cmd_hire(args: argparse.Namespace) -> None:
     if arch and not args.skills:
         stack = arch.get("stack", [])
     else:
-        stack = []
+        # --skills narrows an archetype's stack (bare names) or lists source:skill pairs.
+        known = {n: e for e in (arch or {}).get("stack", []) for n in e.get("skills", [])}
+        stack, by_source = [], {}
         for item in (args.skills or "").split(","):
             item = item.strip()
             if not item:
                 continue
-            source, _, skill = item.partition(":")
-            stack.append({"source": source, "skills": [skill] if skill else [], "use": ""})
+            source, sep, skill = item.rpartition(":")
+            if not sep:
+                if item not in known:
+                    die(f"'{item}': give skills as source:skill (e.g. owner/repo:skill-name)"
+                        + (f", or pick from this archetype: {', '.join(known)}" if known else ""))
+                source, skill = known[item]["source"], item
+            entry = by_source.get(source)
+            if entry is None:
+                origin = known.get(skill, {})
+                entry = {"source": source, "skills": [], "use": origin.get("use", "") if origin.get("source") == source else ""}
+                if origin.get("plugins") and origin.get("source") == source:
+                    entry["plugins"] = origin["plugins"]
+                by_source[source] = entry
+                stack.append(entry)
+            if skill:
+                entry["skills"].append(skill)
     table = ["| Skills | Source | Use them when |", "|---|---|---|"]
     skill_names = []
     for e in stack:
@@ -662,7 +678,8 @@ def main(argv: list[str] | None = None) -> None:
     s.add_argument("--parent", help="seat or agent id it reports to")
     s.add_argument("--mission")
     s.add_argument("--description", help="one line used to route work to this agent")
-    s.add_argument("--skills", help="comma-separated source:skill pairs, e.g. owner/repo:skill-name")
+    s.add_argument("--skills", help="comma-separated source:skill pairs (owner/repo:skill-name); "
+                                    "with --archetype, bare skill names narrow its stack")
     s.add_argument("--dir")
     s.add_argument("--force", action="store_true", help="override headcount caps or overwrite a charter")
     s.set_defaults(func=cmd_hire)

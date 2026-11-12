@@ -70,8 +70,15 @@ scripts, copy `assets/templates/agent-charter.md` and fill it in by hand.
 ## 3. Equip: choose its skills
 
 1. **Start from the catalog** stack for the archetype, or from the relevant part of your own stack.
-2. **Keep it to three to six skills.** Each one costs context and brings its own instructions;
-   two skills that both want to run the process will fight. Pick the ones the deliverables need.
+2. **Cut it down to what this mission needs** — usually three to six skills the agent will use
+   every week. A catalog stack is the full menu, not the order. Each extra skill adds
+   instructions that compete for the agent's attention, and two skills that both want to run
+   the process will fight. Narrow an archetype by naming the skills to keep:
+
+   ```bash
+   python <skill-dir>/scripts/board.py hire --archetype head-of-sales \
+       --skills account-research,draft-outreach,call-prep,cold-email,humanizer
+   ```
 3. **Fill gaps deliberately.** If nothing in the registry covers a need, search for a skill and
    vet it before assigning it — [skill-vetting.md](skill-vetting.md). Never hand a sub-agent a
    skill you have not read.
