@@ -6,7 +6,7 @@ any agent arriving cold can find out where the project stands from files alone.
 
 ## Contents
 
-1. [Pick the depth](#1-pick-the-depth)
+1. [Pick the depth](#1-pick-the-depth) — including [sprint in one sitting](#sprint-in-one-sitting)
 2. [The boardroom](#2-the-boardroom)
 3. [Phase 0 — Intake](#phase-0--intake)
 4. [Phase 1 — Discovery](#phase-1--discovery)
@@ -24,12 +24,32 @@ infer it from the charter and state your choice.
 
 | Depth | For | What changes |
 |---|---|---|
-| **sprint** | Prototype, weekend project, internal tool | One sitting. Short charter, no discovery memos: every seat gives five lines per docket item, decisions are logged as one-liners, then straight to a build plan. No sub-agents unless a seat cannot cope. |
+| **sprint** | Prototype, weekend project, internal tool | One agent, one sitting, a few pages in total. No seat dispatch, no discovery memos, no sub-agents. See [Sprint in one sitting](#sprint-in-one-sitting). |
 | **standard** | A real product with real users | Everything below as written. |
 | **deep** | Funded, regulated, or hard to reverse | Standard, plus: claims in discovery need a source or are marked as untested; a red-team pass on every one-way-door decision; a financial model with scenarios; a threat model; founder sign-off at every gate. |
 
-Going deeper later is cheap. Starting deep on a prototype wastes the founder's attention,
-which is the scarcest resource the board has.
+Going deeper later is cheap. Starting deep on a prototype wastes the founder's attention
+and a great many tokens: six seats dispatched in parallel cost roughly six times one agent,
+and each will write as much as it is allowed to.
+
+### Sprint in one sitting
+
+One agent facilitates and speaks for the seats itself; it does not dispatch them.
+
+1. **Charter** — short. Ask only what you cannot infer; tag what you inferred as an assumption.
+2. **Walk the docket once** (the table in Phase 2). For each item, read the owning seat's
+   judgment calls in its role file, then write that seat's decision in two or three lines. Add
+   one line from another seat only where it would object. Skip items that do not apply.
+3. **Log it.** One line per decision in `board/DECISIONS.md`; the reasoning for all of them in
+   a single `board/decisions/D-0001-sprint-kickoff.md`. Write a separate full record only for
+   a one-way door.
+4. **Plan.** A short build plan in `board/cto/plan.md`: milestones, the riskiest assumption
+   first, what is out of scope.
+5. **Hand over.** Update `STATUS.md` and give the founder one list: decisions taken on their
+   behalf, assumptions to confirm, and the one-way doors waiting for their approval.
+
+If an item turns out to be contested or hard to reverse, that single item gets a proper
+board meeting. The rest stays light.
 
 ## 2. The boardroom
 
@@ -76,15 +96,22 @@ The questions that matter most, because every later decision leans on them:
 
 If the founder says "you decide", decide, write it in the charter as an assumption, and move on.
 
-**Gate:** the founder has approved the charter. Nothing else starts before this, because a
-discovery phase run against the wrong brief is pure waste.
+If the founder is not available and has said to go ahead, mark the charter `provisional`,
+tag every inferred line as an assumption, and proceed on two-way doors only. Prepare the
+one-way doors to the point where approval takes a minute, and queue them in `STATUS.md`
+under "Waiting on the founder".
+
+**Gate:** the founder has approved the charter, or has explicitly told the board to proceed
+on a provisional one. Nothing else starts before this, because a discovery phase run against
+the wrong brief is pure waste.
 
 ## Phase 1 — Discovery
 
 **Lead:** each seat for its own lens, in parallel. **Output:** `board/<seat>/discovery.md`.
 
-Each seat writes one page **without reading the other seats' pages**. Independence is the
-point: six memos that have converged in advance tell the board nothing.
+Each seat writes **one page — a real limit, not a figure of speech — without reading the
+other seats' pages**. Independence is the point: six memos that have converged in advance
+tell the board nothing. Each seat covers its own question below, not the whole docket.
 
 | Seat | The question it answers | Must contain |
 |---|---|---|

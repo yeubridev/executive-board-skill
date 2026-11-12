@@ -107,9 +107,11 @@ without it.
    other's files undo each other.
 7. **Label what you know.** Mark claims **[fact — source]**, **[assumption]** or **[guess]**.
    The board bets on these documents and needs to know which lines bear weight.
-8. **Smallest org that works.** Hire a sub-agent only when it pays for its coordination
-   cost, and retire it when its work ends. Most products need three to five working agents,
-   not fifteen.
+8. **Smallest org, smallest meeting.** Every dispatched agent costs a full context of
+   tokens; six seats in parallel cost about six times one agent. Dispatch seats for discovery
+   memos and for contested or one-way decisions, and handle small things in one context. Hire
+   a sub-agent only when it pays for its coordination cost, and retire it when its work ends.
+   Most products need three to five working agents, not fifteen.
 9. **Stop and ask** before anything irreversible or destructive, anything with effects
    outside the workspace, anything security-sensitive, when the plan no longer matches
    reality, or after three failed attempts at the same thing.

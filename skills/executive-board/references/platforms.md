@@ -27,7 +27,9 @@ python <skill-dir>/scripts/board.py init --project "<name>" --with-agents   # wr
 
 - *One session facilitates.* The main session is the Chief of Staff. It dispatches the seat
   subagents with the Agent tool — in parallel for discovery memos and board-meeting
-  positions, which also keeps them independent — and talks to the founder.
+  positions, which also keeps them independent — and talks to the founder. Each dispatch
+  spends a full context of tokens, so give every seat a length limit in its brief, invite
+  only the seats with a stake, and in `sprint` depth do not dispatch at all.
 - *One session per seat.* Start a session as a seat with `claude --agent cto` (or
   `claude --agent executive-board:cto`). That session holds the seat for its whole life and
   coordinates with the others through `board/`.

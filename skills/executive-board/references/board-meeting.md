@@ -65,7 +65,8 @@ The convening seat writes the question so that it can be answered:
 - the decision as a choice between **named options** (include "do nothing" when it is real),
 - the deciding seat, the door type, the deadline,
 - the constraints from the charter and earlier decisions that bind it,
-- which seats are invited — only those whose area is affected. Empty chairs are fine.
+- which seats are invited — only those whose area is affected. Empty chairs are fine, and
+  every seat you add costs a full agent's worth of tokens.
 
 A vague question ("what should our strategy be?") produces six essays. If you cannot name the
 options, you are still in discovery; go do that first.
