@@ -1,0 +1,2351 @@
+{
+  "schema": 1,
+  "verified_on": "2026-11-12",
+  "about": "Curated third-party skills for each board seat and sub-agent archetype. Names, licences and install commands were checked against each repository on the date above. Curated is not audited: upstream changes after that date. Star counts are approximate snapshots.",
+  "sources": {
+    "obra/superpowers": {
+      "url": "https://github.com/obra/superpowers",
+      "summary": "Engineering methodology that triggers on its own: brainstorm, plan, test-first build, sub-agent execution, review, finish.",
+      "license": "MIT",
+      "stars": "~316k",
+      "install": {
+        "prefer": "plugin",
+        "plugins": [
+          "superpowers@claude-plugins-official"
+        ],
+        "skills_cli": "obra/superpowers",
+        "note": "The plugin adds the session-start bootstrap that makes the skills trigger; the skills CLI installs the skills alone. Install only from obra/superpowers: look-alike repositories exist."
+      }
+    },
+    "mattpocock/skills": {
+      "url": "https://github.com/mattpocock/skills",
+      "summary": "Small composable engineering skills that do not try to own the process: requirement interrogation, specs, tickets, architecture.",
+      "license": "MIT",
+      "stars": "~322k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "mattpocock/skills",
+        "plugins": [
+          "mattpocock-skills@claude-plugins-official"
+        ],
+        "note": "Pick skills instead of taking the whole pack: its tdd, diagnosing-bugs and code-review overlap the process layer. Add setup-matt-pocock-skills and run /setup-matt-pocock-skills once."
+      }
+    },
+    "DietrichGebert/ponytail": {
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "summary": "Write-less-code discipline: is it needed, can it be reused, does the platform already do it. Never trades away validation, security or accessibility.",
+      "license": "MIT",
+      "stars": "~189k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "DietrichGebert/ponytail",
+        "plugins": [
+          "ponytail@ponytail"
+        ],
+        "skills_cli": "DietrichGebert/ponytail",
+        "note": "Levels: lite, full (default), ultra, off."
+      }
+    },
+    "anthropics/claude-plugins-official": {
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "summary": "Anthropic's official Claude Code plugin marketplace: first-party review and security plugins, plus vetted third-party ones.",
+      "license": "Apache-2.0 (per-plugin licences vary)",
+      "stars": "~47k",
+      "install": {
+        "prefer": "plugin",
+        "plugins": [],
+        "note": "Available in Claude Code without adding a marketplace. Skip feature-dev when another process layer is installed."
+      }
+    },
+    "trailofbits/skills": {
+      "url": "https://github.com/trailofbits/skills",
+      "summary": "Security-audit workflows from a professional security firm.",
+      "license": "CC-BY-SA-4.0",
+      "stars": "~8k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "trailofbits/skills",
+        "plugins": [],
+        "note": "ShareAlike licence: use it, link to it, do not copy its text into your own skills."
+      }
+    },
+    "addyosmani/agent-skills": {
+      "url": "https://github.com/addyosmani/agent-skills",
+      "summary": "Lifecycle engineering skills with strong shipping and operations coverage.",
+      "license": "MIT",
+      "stars": "~116k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "addyosmani/agent-skills",
+        "marketplace": "addyosmani/agent-skills",
+        "plugins": [
+          "agent-skills@addy-agent-skills"
+        ],
+        "note": "The full plugin is a second process layer (/spec /plan /build /review /ship); pick individual skills when superpowers is installed."
+      }
+    },
+    "garrytan/gstack": {
+      "url": "https://github.com/garrytan/gstack",
+      "summary": "Role-based sprint commands from a YC partner: founder-style idea and plan review, real-browser QA, release engineering.",
+      "license": "MIT",
+      "stars": "~141k",
+      "install": {
+        "prefer": "manual",
+        "manual": [
+          "git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup"
+        ],
+        "note": "Needs Bun. It registers hooks and is a process layer of its own: call its commands by name for the jobs listed, and do not let it run the whole build alongside superpowers."
+      }
+    },
+    "wshobson/agents": {
+      "url": "https://github.com/wshobson/agents",
+      "summary": "Large marketplace of granular plugins; widest DevOps and infrastructure coverage, plus startup finance.",
+      "license": "MIT",
+      "stars": "~42k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "wshobson/agents",
+        "plugins": [],
+        "note": "Install single plugins. Skip tdd-workflows, conductor and full-stack-orchestration when a process layer is already installed."
+      }
+    },
+    "cloudflare/security-audit-skill": {
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "summary": "Phased whole-repository security audit with a coverage ledger and independent verification.",
+      "license": "MIT",
+      "stars": "~71k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "cloudflare/security-audit-skill"
+      }
+    },
+    "affaan-m/ECC": {
+      "url": "https://github.com/affaan-m/ECC",
+      "summary": "ECC (formerly everything-claude-code): an all-in-one harness of agents, skills, hooks and rules.",
+      "license": "MIT",
+      "stars": "~302k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "affaan-m/ECC",
+        "plugins": [
+          "ecc@ecc"
+        ],
+        "note": "A complete process layer with its own hooks and rules. Choose ECC or superpowers as the always-on layer, not both."
+      }
+    },
+    "EveryInc/compound-engineering-plugin": {
+      "url": "https://github.com/EveryInc/compound-engineering-plugin",
+      "summary": "Plan, work, review, and capture what was learned so each cycle makes the next one easier.",
+      "license": "MIT",
+      "stars": "~26k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "EveryInc/compound-engineering-plugin",
+        "plugins": [
+          "compound-engineering@compound-engineering-plugin"
+        ]
+      }
+    },
+    "anthropics/skills": {
+      "url": "https://github.com/anthropics/skills",
+      "summary": "Anthropic's reference skills: office documents, frontend design, web-app testing, MCP building, skill authoring.",
+      "license": "Apache-2.0",
+      "stars": "~193k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "anthropics/skills",
+        "marketplace": "anthropics/skills",
+        "plugins": [
+          "document-skills@anthropic-agent-skills",
+          "example-skills@anthropic-agent-skills"
+        ]
+      }
+    },
+    "vercel-labs/agent-skills": {
+      "url": "https://github.com/vercel-labs/agent-skills",
+      "summary": "Vercel's rule sets: interface guidelines, React performance, composition patterns.",
+      "license": "MIT",
+      "stars": "~34k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "vercel-labs/agent-skills"
+      }
+    },
+    "supabase/agent-skills": {
+      "url": "https://github.com/supabase/agent-skills",
+      "summary": "Supabase and Postgres best practices from the vendor.",
+      "license": "MIT",
+      "stars": "~3k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "supabase/agent-skills"
+      }
+    },
+    "hashicorp/agent-skills": {
+      "url": "https://github.com/hashicorp/agent-skills",
+      "summary": "Terraform and Packer skills from the vendor.",
+      "license": "MPL-2.0",
+      "stars": "~1k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "hashicorp/agent-skills",
+        "plugins": [
+          "terraform@hashicorp"
+        ]
+      }
+    },
+    "cloudflare/skills": {
+      "url": "https://github.com/cloudflare/skills",
+      "summary": "Cloudflare platform skills from the vendor.",
+      "license": "Apache-2.0",
+      "stars": "~3k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "cloudflare/skills",
+        "plugins": [
+          "cloudflare@cloudflare"
+        ]
+      }
+    },
+    "alirezarezvani/claude-skills": {
+      "url": "https://github.com/alirezarezvani/claude-skills",
+      "summary": "Largest business-role skill library, with script-backed calculators: C-level advisors, finance, operations, product and project management.",
+      "license": "MIT",
+      "stars": "~30k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "alirezarezvani/claude-skills",
+        "plugins": [],
+        "skills_cli": "alirezarezvani/claude-skills",
+        "note": "Take the advisor and calculator skills. Leave out its board-meeting, chief-of-staff and decision-logger skills and the c-level-agents plugin: this skill already runs the board, and two protocols for the same meeting conflict. Do not install its marketing-skills next to coreyhaines31/marketingskills."
+      }
+    },
+    "phuryn/pm-skills": {
+      "url": "https://github.com/phuryn/pm-skills",
+      "summary": "Product-management frameworks as skills: strategy, market research, go-to-market, execution, pricing.",
+      "license": "MIT",
+      "stars": "~28k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "phuryn/pm-skills",
+        "plugins": []
+      }
+    },
+    "anthropics/knowledge-work-plugins": {
+      "url": "https://github.com/anthropics/knowledge-work-plugins",
+      "summary": "Anthropic's role plugins for knowledge work, with connectors: operations, finance, legal, HR, support, sales, marketing, product, design.",
+      "license": "Apache-2.0",
+      "stars": "~36k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "anthropics/knowledge-work-plugins",
+        "plugins": []
+      }
+    },
+    "anthropics/financial-services": {
+      "url": "https://github.com/anthropics/financial-services",
+      "summary": "Institutional-grade spreadsheet modelling: three-statement, DCF, comparables, model audit.",
+      "license": "Apache-2.0",
+      "stars": "~41k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "anthropics/financial-services",
+        "plugins": [
+          "financial-analysis@claude-for-financial-services"
+        ],
+        "note": "Built for banking and private-equity analysts; its market-data connectors are paid."
+      }
+    },
+    "RefoundAI/lenny-skills": {
+      "url": "https://github.com/RefoundAI/lenny-skills",
+      "summary": "Product and company-building judgment distilled from Lenny's Podcast and Newsletter.",
+      "license": "MIT",
+      "stars": "~1.5k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "RefoundAI/lenny-skills",
+        "manual": [
+          "git clone https://github.com/RefoundAI/lenny-skills.git",
+          "cp -R lenny-skills/skills/<skill-name> .claude/skills/"
+        ],
+        "note": "Its README documents clone-and-copy; the skills CLI reads the same skills/ layout. Fall back to the manual commands if the CLI route fails."
+      }
+    },
+    "lool-ventures/founder-skills": {
+      "url": "https://github.com/lool-ventures/founder-skills",
+      "summary": "Fundraising review written by a venture fund: deck, financial model, cap table, investment-committee simulation.",
+      "license": "Apache-2.0",
+      "stars": "<1k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "lool-ventures/founder-skills",
+        "plugins": [
+          "founder-skills@lool-founder-skills"
+        ],
+        "note": "Needs Python 3.10+."
+      }
+    },
+    "anthropics/claude-for-legal": {
+      "url": "https://github.com/anthropics/claude-for-legal",
+      "summary": "Legal practice plugins: commercial contracts, privacy, employment, product counsel.",
+      "license": "Apache-2.0",
+      "stars": "~10k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "anthropics/claude-for-legal",
+        "plugins": []
+      }
+    },
+    "EveryInc/charlie-cfo-skill": {
+      "url": "https://github.com/EveryInc/charlie-cfo-skill",
+      "summary": "Bootstrapped-company CFO: runway and thirteen-week cash flow.",
+      "license": "MIT",
+      "stars": "<1k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "EveryInc/charlie-cfo-skill"
+      }
+    },
+    "coreyhaines31/marketingskills": {
+      "url": "https://github.com/coreyhaines31/marketingskills",
+      "summary": "Broadest maintained marketing pack: positioning, copy, SEO, launch, ads, email, CRO, analytics and sales enablement around one shared product-context document.",
+      "license": "MIT",
+      "stars": "~60k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "coreyhaines31/marketingskills",
+        "marketplace": "coreyhaines31/marketingskills",
+        "plugins": [
+          "marketing-skills@marketingskills"
+        ],
+        "note": "Install the whole pack: the skills share .agents/product-marketing.md. Run product-marketing first."
+      }
+    },
+    "blader/humanizer": {
+      "url": "https://github.com/blader/humanizer",
+      "summary": "Removes the tells of machine-written prose and matches a voice sample.",
+      "license": "MIT",
+      "stars": "~68k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "blader/humanizer",
+        "marketplace": "blader/humanizer",
+        "plugins": [
+          "humanizer@humanizer"
+        ],
+        "note": "Run it last, after editing. It improves writing; it does not claim to defeat AI detectors."
+      }
+    },
+    "AgriciDaniel/claude-seo": {
+      "url": "https://github.com/AgriciDaniel/claude-seo",
+      "summary": "Deep SEO and AI-search audits: technical, schema, content briefs, clusters.",
+      "license": "MIT",
+      "stars": "~28k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "AgriciDaniel/claude-seo",
+        "plugins": [
+          "claude-seo@agricidaniel-claude-seo"
+        ],
+        "note": "Run /seo setup after installing."
+      }
+    },
+    "wondelai/skills": {
+      "url": "https://github.com/wondelai/skills",
+      "summary": "Well-known business books turned into skills: positioning, messaging, offers, CRO, sales.",
+      "license": "MIT",
+      "stars": "~3k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "wondelai/skills",
+        "plugins": []
+      }
+    },
+    "AgriciDaniel/claude-ads": {
+      "url": "https://github.com/AgriciDaniel/claude-ads",
+      "summary": "Audits of paid-ad accounts across platforms; read-only, proposes changes as drafts.",
+      "license": "MIT",
+      "stars": "~11k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "AgriciDaniel/claude-ads",
+        "plugins": [
+          "claude-ads@ai-marketing-hub-claude-ads"
+        ]
+      }
+    },
+    "heygen-com/hyperframes": {
+      "url": "https://github.com/heygen-com/hyperframes",
+      "summary": "Programmatic video from HTML to MP4.",
+      "license": "Apache-2.0",
+      "stars": "~83k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "heygen-com/hyperframes",
+        "plugins": [
+          "hyperframes@hyperframes"
+        ]
+      }
+    },
+    "remotion-dev/skills": {
+      "url": "https://github.com/remotion-dev/skills",
+      "summary": "Programmatic video in React, from the Remotion team.",
+      "license": "No licence file in the skills repository; Remotion itself has its own licence terms",
+      "stars": "~7k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "remotion-dev/skills"
+      }
+    },
+    "pbakaus/impeccable": {
+      "url": "https://github.com/pbakaus/impeccable",
+      "summary": "Design vocabulary, commands and a deterministic detector for generic machine-made UI: shape, critique, audit, polish.",
+      "license": "Apache-2.0",
+      "stars": "~109k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "pbakaus/impeccable",
+        "plugins": [
+          "impeccable@impeccable"
+        ],
+        "manual": [
+          "npx impeccable install"
+        ],
+        "note": "Run /impeccable init once. Review its settings first: its hook runs outside model approval, telemetry is on by default, and the live Apply mode can spawn an agent with permission checks bypassed."
+      }
+    },
+    "emilkowalski/skills": {
+      "url": "https://github.com/emilkowalski/skills",
+      "summary": "Motion and interaction craft from a design engineer: when and how to animate, review, performance, gestures.",
+      "license": "MIT",
+      "stars": "~56k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "emilkowalski/skills"
+      }
+    },
+    "jakubkrehel/skills": {
+      "url": "https://github.com/jakubkrehel/skills",
+      "summary": "Craft specialists: typography, colour, layout, accessibility, interface review.",
+      "license": "MIT",
+      "stars": "~12k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "jakubkrehel/skills",
+        "marketplace": "jakubkrehel/skills",
+        "plugins": [
+          "interfaces@interfaces"
+        ]
+      }
+    },
+    "nextlevelbuilder/ui-ux-pro-max-skill": {
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "summary": "UI UX Pro Max: a searchable reference of styles, palettes, font pairings and UX guidelines, with a design-system generator.",
+      "license": "MIT",
+      "stars": "~148k",
+      "install": {
+        "prefer": "plugin",
+        "marketplace": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "plugins": [
+          "ui-ux-pro-max@ui-ux-pro-max-skill"
+        ],
+        "manual": [
+          "npm install -g ui-ux-pro-max-cli",
+          "uipro init --ai claude"
+        ],
+        "note": "Needs Python 3. Treat it as a lookup database, not as the taste layer: take palettes, pairings and rules from it, then shape the result."
+      }
+    },
+    "Nutlope/hallmark": {
+      "url": "https://github.com/Nutlope/hallmark",
+      "summary": "Hallmark: themed page builds, redesigns and audits with a browser lint and hard quality gates.",
+      "license": "MIT",
+      "stars": "~54k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "nutlope/hallmark",
+        "marketplace": "nutlope/hallmark",
+        "plugins": [
+          "hallmark@hallmark"
+        ],
+        "note": "A page pipeline with its own palettes and gates. Invoke it by name for a given page; do not let it and another pipeline both run on the same page."
+      }
+    },
+    "Leonxlnx/taste-skill": {
+      "url": "https://github.com/Leonxlnx/taste-skill",
+      "summary": "Taste skill: high-end marketing and showcase sites with motion, checked in a real browser.",
+      "license": "MIT",
+      "stars": "~114k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "Leonxlnx/taste-skill",
+        "marketplace": "Leonxlnx/taste-skill",
+        "plugins": [
+          "taste-skill@taste-skill"
+        ],
+        "note": "Needs Node 22+ and Chrome. The plugin route installs a stop-hook gate; the skills CLI does not. Variants live in Leonxlnx/taste-skill-classics."
+      }
+    },
+    "figma/mcp-server-guide": {
+      "url": "https://github.com/figma/mcp-server-guide",
+      "summary": "Figma's official plugin and skills: design to code, code to design, libraries, Code Connect, specs.",
+      "license": "Figma Developer Terms (no open-source licence file)",
+      "stars": "~2k",
+      "install": {
+        "prefer": "plugin",
+        "plugins": [
+          "figma@claude-plugins-official"
+        ],
+        "note": "Needs a Figma account and the Figma MCP server."
+      }
+    },
+    "greensock/gsap-skills": {
+      "url": "https://github.com/greensock/gsap-skills",
+      "summary": "Official GSAP skills: core, timelines, ScrollTrigger, React, performance.",
+      "license": "MIT",
+      "stars": "~18k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "greensock/gsap-skills",
+        "marketplace": "greensock/gsap-skills",
+        "plugins": [
+          "gsap-skills@gsap-skills"
+        ]
+      }
+    },
+    "addyosmani/web-quality-skills": {
+      "url": "https://github.com/addyosmani/web-quality-skills",
+      "summary": "Measured web quality: accessibility (WCAG 2.2), Core Web Vitals, performance.",
+      "license": "MIT",
+      "stars": "~3k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "addyosmani/web-quality-skills",
+        "marketplace": "addyosmani/web-quality-skills",
+        "plugins": [
+          "web-quality-skills@addy-web-quality-skills"
+        ]
+      }
+    },
+    "shadcn/ui": {
+      "url": "https://github.com/shadcn-ui/ui",
+      "summary": "Project-aware shadcn/ui knowledge from the maintainers.",
+      "license": "MIT",
+      "stars": "n/a",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "shadcn/ui"
+      }
+    },
+    "Leonxlnx/imagegen-skills": {
+      "url": "https://github.com/Leonxlnx/imagegen-skills",
+      "summary": "Brand kits and image-based design comps for agents that can generate images.",
+      "license": "MIT",
+      "stars": "<1k",
+      "install": {
+        "prefer": "skills",
+        "skills_cli": "Leonxlnx/imagegen-skills",
+        "marketplace": "Leonxlnx/imagegen-skills",
+        "plugins": [
+          "imagegen-skills@imagegen-skills"
+        ]
+      }
+    }
+  },
+  "stacks": {
+    "ceo": [
+      {
+        "source": "phuryn/pm-skills",
+        "tier": "core",
+        "plugins": [
+          "pm-product-strategy@pm-skills",
+          "pm-market-research@pm-skills"
+        ],
+        "skills": [
+          "product-strategy",
+          "product-vision",
+          "startup-canvas",
+          "lean-canvas",
+          "business-model",
+          "value-proposition",
+          "market-sizing",
+          "competitor-analysis"
+        ],
+        "phase": "Discovery · Decisions",
+        "use": "Strategy canvases, market sizing and competitor analysis behind the first three docket items."
+      },
+      {
+        "source": "alirezarezvani/claude-skills",
+        "tier": "core",
+        "plugins": [
+          "c-level-skills@claude-code-skills"
+        ],
+        "skills": [
+          "ceo-advisor",
+          "scenario-war-room",
+          "competitive-intel",
+          "board-deck-builder"
+        ],
+        "phase": "Decisions · Operate",
+        "use": "CEO decision frameworks, scenario planning, competitive intelligence, board decks."
+      },
+      {
+        "source": "anthropics/knowledge-work-plugins",
+        "tier": "core",
+        "plugins": [
+          "product-management@knowledge-work-plugins"
+        ],
+        "skills": [
+          "write-spec",
+          "competitive-brief",
+          "metrics-review",
+          "stakeholder-update",
+          "product-brainstorming"
+        ],
+        "phase": "Definition · Operate",
+        "use": "Write the PRD, review metrics, update the founder."
+      },
+      {
+        "source": "garrytan/gstack",
+        "tier": "recommended",
+        "skills": [
+          "/office-hours",
+          "/plan-ceo-review"
+        ],
+        "phase": "Intake · Definition",
+        "use": "Pressure-test the idea before the charter and the plan before the build, the way a demanding investor would."
+      },
+      {
+        "source": "mattpocock/skills",
+        "tier": "recommended",
+        "skills": [
+          "grill-me",
+          "to-spec"
+        ],
+        "phase": "Intake · Definition",
+        "use": "Get interrogated on the plan until every open branch is resolved; turn the result into a spec."
+      },
+      {
+        "source": "RefoundAI/lenny-skills",
+        "tier": "recommended",
+        "skills": [
+          "defining-product-strategy",
+          "high-stakes-decisions",
+          "evaluating-startup-ideas",
+          "measuring-pmf"
+        ],
+        "phase": "Discovery · Operate",
+        "use": "Practitioner judgment on strategy, one-way-door decisions and product-market fit."
+      },
+      {
+        "source": "anthropics/skills",
+        "tier": "recommended",
+        "skills": [
+          "pptx",
+          "docx"
+        ],
+        "phase": "Any",
+        "use": "Decks and memos for the founder or outside readers."
+      },
+      {
+        "source": "lool-ventures/founder-skills",
+        "tier": "optional",
+        "skills": [
+          "deck-review",
+          "ic-sim",
+          "competitive-positioning",
+          "market-sizing"
+        ],
+        "phase": "Fundraising",
+        "use": "When raising money: deck review and a simulated investment committee."
+      }
+    ],
+    "cto": [
+      {
+        "source": "obra/superpowers",
+        "tier": "core",
+        "skills": [
+          "brainstorming",
+          "writing-plans",
+          "test-driven-development",
+          "subagent-driven-development",
+          "systematic-debugging",
+          "verification-before-completion",
+          "requesting-code-review",
+          "using-git-worktrees",
+          "finishing-a-development-branch"
+        ],
+        "whole_repo": true,
+        "phase": "Definition · Build",
+        "use": "The process layer: how work moves from idea to merged, tested code. Exactly one process layer should be always-on."
+      },
+      {
+        "source": "mattpocock/skills",
+        "tier": "core",
+        "skills": [
+          "setup-matt-pocock-skills",
+          "grill-with-docs",
+          "to-spec",
+          "to-tickets",
+          "wayfinder",
+          "codebase-design",
+          "domain-modeling",
+          "improve-codebase-architecture",
+          "prototype"
+        ],
+        "phase": "Discovery · Definition",
+        "use": "Requirement interrogation, specs, tickets, and architecture: deep modules, a shared domain language."
+      },
+      {
+        "source": "DietrichGebert/ponytail",
+        "tier": "core",
+        "skills": [
+          "ponytail",
+          "ponytail-review",
+          "ponytail-audit",
+          "ponytail-debt"
+        ],
+        "whole_repo": true,
+        "phase": "Build · Operate",
+        "use": "Always-on restraint: build the least code that solves it. Review diffs with ponytail-review; audit debt periodically."
+      },
+      {
+        "source": "anthropics/claude-plugins-official",
+        "tier": "core",
+        "plugins": [
+          "code-review@claude-plugins-official",
+          "security-guidance@claude-plugins-official"
+        ],
+        "skills": [
+          "code-review",
+          "security-guidance"
+        ],
+        "phase": "Build",
+        "use": "Independent multi-agent review of every pull request; security hooks on edits and commits."
+      },
+      {
+        "source": "trailofbits/skills",
+        "tier": "recommended",
+        "plugins": [
+          "differential-review@trailofbits",
+          "insecure-defaults@trailofbits",
+          "supply-chain-risk-auditor@trailofbits",
+          "sharp-edges@trailofbits"
+        ],
+        "skills": [
+          "differential-review",
+          "insecure-defaults",
+          "supply-chain-risk-auditor",
+          "sharp-edges"
+        ],
+        "phase": "Build · Launch",
+        "use": "Security review of each release's diff, defaults and dependencies."
+      },
+      {
+        "source": "addyosmani/agent-skills",
+        "tier": "recommended",
+        "skills": [
+          "api-and-interface-design",
+          "documentation-and-adrs",
+          "security-and-hardening",
+          "ci-cd-and-automation",
+          "observability-and-instrumentation",
+          "shipping-and-launch"
+        ],
+        "phase": "Definition · Launch",
+        "use": "Interface design, architecture decision records, CI/CD, observability and the launch checklist."
+      },
+      {
+        "source": "affaan-m/ECC",
+        "tier": "recommended",
+        "alternative_to": "obra/superpowers",
+        "skills": [
+          "tdd-workflow",
+          "verification-loop",
+          "security-review",
+          "e2e-testing",
+          "deployment-patterns",
+          "docker-patterns",
+          "postgres-patterns"
+        ],
+        "phase": "Definition · Launch",
+        "use": "The all-in-one alternative to superpowers: one harness with agents, hooks, rules and stack patterns."
+      },
+      {
+        "source": "garrytan/gstack",
+        "tier": "recommended",
+        "skills": [
+          "/qa",
+          "/review",
+          "/cso",
+          "/ship",
+          "/canary"
+        ],
+        "phase": "Build · Launch",
+        "use": "Real-browser QA and release engineering, called by name."
+      },
+      {
+        "source": "anthropics/claude-plugins-official",
+        "tier": "recommended",
+        "plugins": [
+          "pr-review-toolkit@claude-plugins-official",
+          "claude-security@claude-plugins-official"
+        ],
+        "skills": [
+          "pr-review-toolkit",
+          "claude-security"
+        ],
+        "phase": "Launch",
+        "use": "Specialised review agents (silent failures, test gaps, types) and a verified deep security scan before launch."
+      },
+      {
+        "source": "anthropics/skills",
+        "tier": "recommended",
+        "skills": [
+          "webapp-testing",
+          "mcp-builder"
+        ],
+        "phase": "Build",
+        "use": "Browser-driven testing of web apps; building MCP servers."
+      },
+      {
+        "source": "cloudflare/security-audit-skill",
+        "tier": "optional",
+        "skills": [
+          "security-audit"
+        ],
+        "phase": "Launch",
+        "use": "Whole-repository audit with a coverage ledger. Use this or claude-security as the pre-launch audit, not both."
+      },
+      {
+        "source": "wshobson/agents",
+        "tier": "optional",
+        "plugins": [
+          "cicd-automation@claude-code-workflows",
+          "deployment-strategies@claude-code-workflows",
+          "observability-monitoring@claude-code-workflows",
+          "incident-response@claude-code-workflows",
+          "database-migrations@claude-code-workflows",
+          "kubernetes-operations@claude-code-workflows",
+          "cloud-infrastructure@claude-code-workflows"
+        ],
+        "skills": [
+          "cicd-automation",
+          "deployment-strategies",
+          "observability-monitoring",
+          "incident-response",
+          "database-migrations",
+          "kubernetes-operations",
+          "cloud-infrastructure"
+        ],
+        "phase": "Launch · Operate",
+        "use": "When the infrastructure is more than a managed platform: Kubernetes, multi-cloud, on-call."
+      },
+      {
+        "source": "EveryInc/compound-engineering-plugin",
+        "tier": "optional",
+        "alternative_to": "obra/superpowers",
+        "skills": [
+          "ce-brainstorm",
+          "ce-plan",
+          "ce-work",
+          "ce-code-review",
+          "ce-compound"
+        ],
+        "phase": "Build · Operate",
+        "use": "Alternative process layer for long-lived products where capturing lessons each cycle matters most."
+      },
+      {
+        "source": "vercel-labs/agent-skills",
+        "tier": "optional",
+        "skills": [
+          "vercel-react-best-practices",
+          "vercel-composition-patterns"
+        ],
+        "phase": "Build",
+        "use": "When the stack is React or Next.js."
+      },
+      {
+        "source": "supabase/agent-skills",
+        "tier": "optional",
+        "skills": [
+          "supabase",
+          "supabase-postgres-best-practices"
+        ],
+        "phase": "Build",
+        "use": "When the stack uses Supabase or Postgres."
+      },
+      {
+        "source": "hashicorp/agent-skills",
+        "tier": "optional",
+        "skills": [
+          "terraform"
+        ],
+        "phase": "Launch",
+        "use": "When infrastructure is managed with Terraform."
+      },
+      {
+        "source": "cloudflare/skills",
+        "tier": "optional",
+        "skills": [
+          "cloudflare"
+        ],
+        "phase": "Build · Launch",
+        "use": "When deploying on Cloudflare."
+      }
+    ],
+    "cmo": [
+      {
+        "source": "coreyhaines31/marketingskills",
+        "tier": "core",
+        "skills": [
+          "product-marketing",
+          "customer-research",
+          "competitor-profiling",
+          "copywriting",
+          "copy-editing",
+          "content-strategy",
+          "seo-audit",
+          "ai-seo",
+          "programmatic-seo",
+          "schema",
+          "social",
+          "launch",
+          "directory-submissions",
+          "ads",
+          "ad-creative",
+          "emails",
+          "onboarding",
+          "churn-prevention",
+          "cro",
+          "signup",
+          "ab-testing",
+          "analytics",
+          "conversion-tracking",
+          "attribution",
+          "pricing"
+        ],
+        "whole_repo": true,
+        "phase": "Discovery → Operate",
+        "use": "The marketing backbone. Run product-marketing first: it writes the shared context every other skill reads."
+      },
+      {
+        "source": "blader/humanizer",
+        "tier": "core",
+        "skills": [
+          "humanizer"
+        ],
+        "whole_repo": true,
+        "phase": "Any",
+        "use": "Last pass on anything a customer will read."
+      },
+      {
+        "source": "phuryn/pm-skills",
+        "tier": "recommended",
+        "plugins": [
+          "pm-go-to-market@pm-skills",
+          "pm-marketing-growth@pm-skills"
+        ],
+        "skills": [
+          "ideal-customer-profile",
+          "beachhead-segment",
+          "gtm-strategy",
+          "competitive-battlecard",
+          "positioning-ideas",
+          "value-prop-statements",
+          "north-star-metric"
+        ],
+        "phase": "Discovery · Decisions",
+        "use": "ICP, beachhead, go-to-market motion, positioning options and battlecards for docket items 2 and 7."
+      },
+      {
+        "source": "anthropics/knowledge-work-plugins",
+        "tier": "recommended",
+        "plugins": [
+          "marketing@knowledge-work-plugins",
+          "brand-voice@knowledge-work-plugins"
+        ],
+        "skills": [
+          "campaign-plan",
+          "brand-review",
+          "competitive-brief",
+          "performance-report",
+          "email-sequence",
+          "discover-brand",
+          "guideline-generation",
+          "brand-voice-enforcement"
+        ],
+        "phase": "Definition · Operate",
+        "use": "Campaign briefs, performance reports, and a brand voice that is discovered, written down and enforced."
+      },
+      {
+        "source": "AgriciDaniel/claude-seo",
+        "tier": "recommended",
+        "skills": [
+          "seo-audit",
+          "seo-technical",
+          "seo-geo",
+          "seo-schema",
+          "seo-content-brief",
+          "seo-cluster"
+        ],
+        "phase": "Launch · Operate",
+        "use": "Deep technical SEO and AI-search audits once there is a site. Strategy stays in marketingskills; audits happen here."
+      },
+      {
+        "source": "wondelai/skills",
+        "tier": "recommended",
+        "plugins": [
+          "strategy-growth@wondelai-skills",
+          "marketing-cro@wondelai-skills",
+          "sales-influence@wondelai-skills"
+        ],
+        "skills": [
+          "obviously-awesome",
+          "storybrand-messaging",
+          "cro-methodology",
+          "hundred-million-offers",
+          "made-to-stick"
+        ],
+        "phase": "Decisions · Definition",
+        "use": "Named frameworks for positioning, messaging and offers. Feed the results into the product-marketing context."
+      },
+      {
+        "source": "AgriciDaniel/claude-ads",
+        "tier": "optional",
+        "skills": [
+          "ads-audit",
+          "ads-google",
+          "ads-meta",
+          "ads-linkedin",
+          "ads-creative",
+          "ads-budget"
+        ],
+        "phase": "Operate",
+        "use": "When paid spend is live: audit the accounts."
+      },
+      {
+        "source": "remotion-dev/skills",
+        "tier": "optional",
+        "skills": [
+          "remotion-best-practices",
+          "remotion-create",
+          "remotion-render",
+          "remotion-captions"
+        ],
+        "whole_repo": true,
+        "phase": "Launch",
+        "use": "When marketing needs video, in React. Use this or hyperframes."
+      },
+      {
+        "source": "heygen-com/hyperframes",
+        "tier": "optional",
+        "alternative_to": "remotion-dev/skills",
+        "skills": [
+          "hyperframes"
+        ],
+        "phase": "Launch",
+        "use": "When marketing needs video, from HTML."
+      }
+    ],
+    "cfo": [
+      {
+        "source": "alirezarezvani/claude-skills",
+        "tier": "core",
+        "plugins": [
+          "c-level-skills@claude-code-skills",
+          "finance-skills@claude-code-skills"
+        ],
+        "skills": [
+          "cfo-advisor",
+          "financial-analyst",
+          "saas-metrics-coach"
+        ],
+        "phase": "Discovery → Operate",
+        "use": "Unit economics, SaaS metrics, runway and scenario maths with script-backed calculators."
+      },
+      {
+        "source": "anthropics/skills",
+        "tier": "core",
+        "skills": [
+          "xlsx"
+        ],
+        "phase": "Definition · Operate",
+        "use": "Build the model as a real spreadsheet with formulas, not a table in prose."
+      },
+      {
+        "source": "phuryn/pm-skills",
+        "tier": "core",
+        "plugins": [
+          "pm-product-strategy@pm-skills"
+        ],
+        "skills": [
+          "pricing-strategy",
+          "monetization-strategy",
+          "business-model"
+        ],
+        "phase": "Decisions",
+        "use": "Pricing and monetisation options for docket item 3."
+      },
+      {
+        "source": "anthropics/financial-services",
+        "tier": "recommended",
+        "plugins": [
+          "financial-analysis@claude-for-financial-services"
+        ],
+        "skills": [
+          "3-statement-model",
+          "dcf-model",
+          "comps-analysis",
+          "audit-xls"
+        ],
+        "phase": "Definition",
+        "use": "A full three-statement model, valuation, and an audit of the spreadsheet before anyone relies on it."
+      },
+      {
+        "source": "anthropics/knowledge-work-plugins",
+        "tier": "recommended",
+        "plugins": [
+          "finance@knowledge-work-plugins",
+          "small-business@knowledge-work-plugins"
+        ],
+        "skills": [
+          "financial-statements",
+          "variance-analysis",
+          "close-management",
+          "reconciliation",
+          "journal-entry",
+          "cash-flow-snapshot",
+          "invoice-chase",
+          "tax-prep"
+        ],
+        "phase": "Operate",
+        "use": "After launch: statements, budget versus actual, month-end close, cash and invoices."
+      },
+      {
+        "source": "wshobson/agents",
+        "tier": "recommended",
+        "plugins": [
+          "startup-business-analyst@claude-code-workflows"
+        ],
+        "skills": [
+          "startup-financial-modeling",
+          "startup-metrics-framework",
+          "market-sizing-analysis"
+        ],
+        "phase": "Discovery · Definition",
+        "use": "Startup-shaped projections and business cases."
+      },
+      {
+        "source": "alirezarezvani/claude-skills",
+        "tier": "recommended",
+        "plugins": [
+          "commercial-skills@claude-code-skills"
+        ],
+        "skills": [
+          "pricing-strategist",
+          "commercial-forecaster"
+        ],
+        "phase": "Decisions · Operate",
+        "use": "Price testing and revenue forecasting."
+      },
+      {
+        "source": "coreyhaines31/marketingskills",
+        "tier": "recommended",
+        "skills": [
+          "pricing"
+        ],
+        "phase": "Decisions · Launch",
+        "use": "Packaging and the pricing page, with the CMO."
+      },
+      {
+        "source": "lool-ventures/founder-skills",
+        "tier": "optional",
+        "skills": [
+          "financial-model-review",
+          "cap-table"
+        ],
+        "phase": "Fundraising",
+        "use": "When raising money: model review and cap-table scenarios."
+      },
+      {
+        "source": "EveryInc/charlie-cfo-skill",
+        "tier": "optional",
+        "skills": [
+          "charlie"
+        ],
+        "whole_repo": true,
+        "phase": "Operate",
+        "use": "For a bootstrapped company: runway and thirteen-week cash flow."
+      }
+    ],
+    "coo": [
+      {
+        "source": "anthropics/knowledge-work-plugins",
+        "tier": "core",
+        "plugins": [
+          "operations@knowledge-work-plugins",
+          "productivity@knowledge-work-plugins"
+        ],
+        "skills": [
+          "process-doc",
+          "runbook",
+          "status-report",
+          "risk-assessment",
+          "compliance-tracking",
+          "vendor-review",
+          "capacity-plan",
+          "change-request",
+          "task-management",
+          "memory-management"
+        ],
+        "phase": "Definition → Operate",
+        "use": "Process documents, runbooks, status reports, the risk register, task tracking."
+      },
+      {
+        "source": "alirezarezvani/claude-skills",
+        "tier": "core",
+        "plugins": [
+          "c-level-skills@claude-code-skills",
+          "business-operations-skills@claude-code-skills"
+        ],
+        "skills": [
+          "coo-advisor",
+          "company-os",
+          "change-management",
+          "process-mapper",
+          "knowledge-ops",
+          "capacity-planner",
+          "vendor-management"
+        ],
+        "phase": "Definition → Operate",
+        "use": "Operating cadence, process mapping, capacity and vendor management."
+      },
+      {
+        "source": "phuryn/pm-skills",
+        "tier": "core",
+        "plugins": [
+          "pm-execution@pm-skills"
+        ],
+        "skills": [
+          "outcome-roadmap",
+          "brainstorm-okrs",
+          "sprint-plan",
+          "pre-mortem",
+          "stakeholder-map",
+          "prioritization-frameworks",
+          "retro"
+        ],
+        "phase": "Definition · Build",
+        "use": "Roadmap, OKRs, sprint plans, pre-mortems and retros."
+      },
+      {
+        "source": "anthropics/knowledge-work-plugins",
+        "tier": "recommended",
+        "plugins": [
+          "legal@knowledge-work-plugins",
+          "human-resources@knowledge-work-plugins",
+          "customer-support@knowledge-work-plugins"
+        ],
+        "skills": [
+          "review-contract",
+          "triage-nda",
+          "compliance-check",
+          "legal-risk-assessment",
+          "recruiting-pipeline",
+          "onboarding",
+          "org-planning",
+          "ticket-triage",
+          "draft-response",
+          "kb-article"
+        ],
+        "phase": "Decisions → Operate",
+        "use": "Contract and compliance triage, hiring, and the support desk."
+      },
+      {
+        "source": "RefoundAI/lenny-skills",
+        "tier": "recommended",
+        "skills": [
+          "goal-setting-okrs",
+          "planning-cadence",
+          "org-design",
+          "running-meetings"
+        ],
+        "phase": "Definition · Operate",
+        "use": "Practitioner judgment on goals, planning rhythm and org design."
+      },
+      {
+        "source": "anthropics/skills",
+        "tier": "recommended",
+        "skills": [
+          "internal-comms",
+          "doc-coauthoring",
+          "docx",
+          "pdf"
+        ],
+        "phase": "Any",
+        "use": "Status updates, co-written documents, and documents for outside parties."
+      },
+      {
+        "source": "anthropics/claude-for-legal",
+        "tier": "optional",
+        "plugins": [
+          "commercial-legal@claude-for-legal",
+          "privacy-legal@claude-for-legal"
+        ],
+        "skills": [
+          "vendor-agreement-review",
+          "nda-review",
+          "saas-msa-review",
+          "dpa-review",
+          "pia-generation"
+        ],
+        "phase": "Launch · Operate",
+        "use": "Once real contracts or personal data exist. Output is a draft for a qualified lawyer, never legal advice."
+      },
+      {
+        "source": "phuryn/pm-skills",
+        "tier": "optional",
+        "plugins": [
+          "pm-toolkit@pm-skills"
+        ],
+        "skills": [
+          "privacy-policy",
+          "draft-nda"
+        ],
+        "phase": "Launch",
+        "use": "First drafts of the privacy policy and NDAs for lawyer review."
+      }
+    ],
+    "head-of-design": [
+      {
+        "source": "pbakaus/impeccable",
+        "tier": "core",
+        "skills": [
+          "impeccable"
+        ],
+        "phase": "Decisions → Launch",
+        "use": "The primary aesthetic layer: init and shape the direction, then critique, audit and polish every surface."
+      },
+      {
+        "source": "anthropics/skills",
+        "tier": "core",
+        "skills": [
+          "frontend-design",
+          "canvas-design",
+          "theme-factory"
+        ],
+        "phase": "Decisions · Build",
+        "use": "Baseline for distinctive frontend work; boards and visual explorations; themes for artifacts."
+      },
+      {
+        "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "tier": "core",
+        "skills": [
+          "ui-ux-pro-max"
+        ],
+        "phase": "Definition",
+        "use": "Reference database for the design system: styles, palettes, font pairings, industry rules. Look things up here, then shape them."
+      },
+      {
+        "source": "emilkowalski/skills",
+        "tier": "core",
+        "skills": [
+          "emil-design-eng",
+          "animate",
+          "review-animations",
+          "improve-animations",
+          "choreograph",
+          "animation-performance",
+          "gestures"
+        ],
+        "whole_repo": true,
+        "phase": "Build · Launch",
+        "use": "Motion judgment: whether to animate, how, and a review of what was built."
+      },
+      {
+        "source": "vercel-labs/agent-skills",
+        "tier": "core",
+        "skills": [
+          "web-design-guidelines"
+        ],
+        "phase": "Build · Launch",
+        "use": "Cheap rule audit on every user-facing change: accessibility, focus, forms, motion, typography."
+      },
+      {
+        "source": "Nutlope/hallmark",
+        "tier": "recommended",
+        "skills": [
+          "hallmark"
+        ],
+        "whole_repo": true,
+        "phase": "Build",
+        "use": "New landing pages with a hard quality floor, and audits of existing ones. One pipeline per page: this or taste skill."
+      },
+      {
+        "source": "Leonxlnx/taste-skill",
+        "tier": "recommended",
+        "skills": [
+          "design-taste-frontend"
+        ],
+        "phase": "Build",
+        "use": "Showcase and marketing sites where motion carries the brand. One pipeline per page: this or hallmark."
+      },
+      {
+        "source": "jakubkrehel/skills",
+        "tier": "recommended",
+        "skills": [
+          "better-typography",
+          "better-colors",
+          "better-layout",
+          "better-accessibility",
+          "interface-review"
+        ],
+        "phase": "Definition · Build",
+        "use": "Specialists for tuning type, colour and layout, and for reviewing interface changes."
+      },
+      {
+        "source": "anthropics/knowledge-work-plugins",
+        "tier": "recommended",
+        "plugins": [
+          "design@knowledge-work-plugins"
+        ],
+        "skills": [
+          "user-research",
+          "research-synthesis",
+          "design-critique",
+          "design-system",
+          "accessibility-review",
+          "ux-copy",
+          "design-handoff"
+        ],
+        "phase": "Discovery → Launch",
+        "use": "User research and synthesis, structured critique, UX copy, and handoff specs for engineering."
+      },
+      {
+        "source": "addyosmani/web-quality-skills",
+        "tier": "recommended",
+        "skills": [
+          "accessibility",
+          "core-web-vitals"
+        ],
+        "phase": "Launch",
+        "use": "The measured accessibility and performance gate before launch."
+      },
+      {
+        "source": "figma/mcp-server-guide",
+        "tier": "optional",
+        "skills": [
+          "figma-use",
+          "figma-design-to-code",
+          "figma-generate-design",
+          "figma-generate-library",
+          "figma-code-connect"
+        ],
+        "phase": "Definition · Build",
+        "use": "When the team works in Figma."
+      },
+      {
+        "source": "greensock/gsap-skills",
+        "tier": "optional",
+        "skills": [
+          "gsap-core",
+          "gsap-timeline",
+          "gsap-scrolltrigger",
+          "gsap-react",
+          "gsap-performance"
+        ],
+        "whole_repo": true,
+        "phase": "Build",
+        "use": "When motion is built with GSAP: timelines and scroll scenes done correctly."
+      },
+      {
+        "source": "remotion-dev/skills",
+        "tier": "optional",
+        "skills": [
+          "remotion-best-practices"
+        ],
+        "whole_repo": true,
+        "phase": "Launch",
+        "use": "When the product needs video: launch films, animated explainers."
+      },
+      {
+        "source": "shadcn/ui",
+        "tier": "optional",
+        "skills": [
+          "shadcn"
+        ],
+        "phase": "Build",
+        "use": "When the component layer is shadcn/ui."
+      },
+      {
+        "source": "Leonxlnx/imagegen-skills",
+        "tier": "optional",
+        "skills": [
+          "brandkit",
+          "imagegen-frontend-web",
+          "image-to-code"
+        ],
+        "phase": "Decisions",
+        "use": "When the agent can generate images: brand kits and visual comps before code."
+      }
+    ]
+  },
+  "archetypes": {
+    "head-of-product": {
+      "title": "Head of Product",
+      "parent": "ceo",
+      "mission": "Turn the board's decisions into a PRD and a backlog an engineer can build from and a tester can test from.",
+      "deliverables": [
+        "`board/ceo/prd.md` kept current",
+        "User stories with acceptance criteria",
+        "A prioritised backlog with the reasoning"
+      ],
+      "calibration": "Write the PRD section and the stories for the single most important user journey. Pass if every story can be tested without asking a question.",
+      "stack": [
+        {
+          "source": "phuryn/pm-skills",
+          "plugins": [
+            "pm-execution@pm-skills",
+            "pm-product-discovery@pm-skills"
+          ],
+          "skills": [
+            "create-prd",
+            "user-stories",
+            "prioritization-frameworks",
+            "opportunity-solution-tree"
+          ],
+          "use": "Writing the PRD, stories and priorities"
+        },
+        {
+          "source": "anthropics/knowledge-work-plugins",
+          "plugins": [
+            "product-management@knowledge-work-plugins"
+          ],
+          "skills": [
+            "write-spec",
+            "roadmap-update"
+          ],
+          "use": "Specifying a feature; updating the roadmap after a decision"
+        },
+        {
+          "source": "mattpocock/skills",
+          "skills": [
+            "grill-me",
+            "to-spec",
+            "to-tickets"
+          ],
+          "use": "Resolving open questions before writing; cutting a spec into tickets"
+        }
+      ]
+    },
+    "market-analyst": {
+      "title": "Market Analyst",
+      "parent": "ceo",
+      "mission": "Keep the board's picture of the market and the competition true and sourced.",
+      "deliverables": [
+        "Competitor profiles",
+        "Market-size estimates with their assumptions",
+        "A short alert when a competitor moves"
+      ],
+      "calibration": "Profile the closest competitor on one page. Pass if every claim carries a source or is labelled as an assumption.",
+      "stack": [
+        {
+          "source": "phuryn/pm-skills",
+          "plugins": [
+            "pm-market-research@pm-skills"
+          ],
+          "skills": [
+            "competitor-analysis",
+            "market-sizing",
+            "user-personas"
+          ],
+          "use": "Profiling competitors, sizing the market"
+        },
+        {
+          "source": "alirezarezvani/claude-skills",
+          "plugins": [
+            "c-level-skills@claude-code-skills"
+          ],
+          "skills": [
+            "competitive-intel"
+          ],
+          "use": "Tracking competitor moves over time"
+        },
+        {
+          "source": "anthropics/knowledge-work-plugins",
+          "plugins": [
+            "product-management@knowledge-work-plugins"
+          ],
+          "skills": [
+            "competitive-brief"
+          ],
+          "use": "Writing the brief the board reads"
+        }
+      ]
+    },
+    "tech-lead": {
+      "title": "Tech Lead",
+      "parent": "cto",
+      "mission": "Build the plan cycle by cycle: tested, reviewed, working code for each story.",
+      "deliverables": [
+        "Merged, tested code for the cycle's stories",
+        "A demo of each story against its acceptance criteria",
+        "Notes on anything that changed the plan"
+      ],
+      "calibration": "Implement the smallest story end to end, tests first. Pass if the CTO would merge the diff unchanged.",
+      "stack": [
+        {
+          "source": "obra/superpowers",
+          "skills": [
+            "test-driven-development",
+            "subagent-driven-development",
+            "systematic-debugging",
+            "verification-before-completion",
+            "requesting-code-review"
+          ],
+          "use": "Every task: test first, verify before claiming done, request review"
+        },
+        {
+          "source": "DietrichGebert/ponytail",
+          "skills": [
+            "ponytail",
+            "ponytail-review"
+          ],
+          "use": "Always on: the least code that solves it"
+        },
+        {
+          "source": "mattpocock/skills",
+          "skills": [
+            "to-tickets",
+            "codebase-design"
+          ],
+          "use": "Cutting work into tickets; shaping modules"
+        }
+      ]
+    },
+    "qa-lead": {
+      "title": "QA Lead",
+      "parent": "cto",
+      "mission": "Try to break every story before it is called done, as someone who did not write it.",
+      "deliverables": [
+        "A test plan per story",
+        "Defect reports with reproduction steps",
+        "A go / no-go line for each release"
+      ],
+      "calibration": "Write and run a test plan for one finished story. Pass if it finds a real defect or shows convincingly that there is none.",
+      "stack": [
+        {
+          "source": "anthropics/skills",
+          "skills": [
+            "webapp-testing"
+          ],
+          "use": "Driving the app in a real browser"
+        },
+        {
+          "source": "garrytan/gstack",
+          "skills": [
+            "/qa"
+          ],
+          "use": "Full browser QA pass before a release"
+        },
+        {
+          "source": "anthropics/claude-plugins-official",
+          "plugins": [
+            "pr-review-toolkit@claude-plugins-official"
+          ],
+          "skills": [
+            "pr-review-toolkit"
+          ],
+          "use": "Finding test gaps and silent failures in a diff"
+        },
+        {
+          "source": "obra/superpowers",
+          "skills": [
+            "verification-before-completion"
+          ],
+          "use": "Evidence before any claim that something works"
+        }
+      ]
+    },
+    "security-lead": {
+      "title": "Security Lead",
+      "parent": "cto",
+      "mission": "Find the ways this product can be attacked or can leak data before someone else does.",
+      "deliverables": [
+        "A threat model",
+        "A security review of each release",
+        "Findings ranked by exploitability, with fixes"
+      ],
+      "calibration": "Review the authentication flow. Pass if findings are ranked by how exploitable they are and each has a concrete fix.",
+      "stack": [
+        {
+          "source": "trailofbits/skills",
+          "plugins": [
+            "differential-review@trailofbits",
+            "insecure-defaults@trailofbits",
+            "supply-chain-risk-auditor@trailofbits",
+            "sharp-edges@trailofbits"
+          ],
+          "skills": [
+            "differential-review",
+            "insecure-defaults",
+            "supply-chain-risk-auditor",
+            "sharp-edges"
+          ],
+          "use": "Reviewing each release's diff, defaults and dependencies"
+        },
+        {
+          "source": "anthropics/claude-plugins-official",
+          "plugins": [
+            "security-guidance@claude-plugins-official",
+            "claude-security@claude-plugins-official"
+          ],
+          "skills": [
+            "security-guidance",
+            "claude-security"
+          ],
+          "use": "Continuous guardrails; a deep scan before launch"
+        },
+        {
+          "source": "addyosmani/agent-skills",
+          "skills": [
+            "security-and-hardening"
+          ],
+          "use": "Hardening checklist during the build"
+        }
+      ]
+    },
+    "devops-lead": {
+      "title": "DevOps Lead",
+      "parent": "cto",
+      "mission": "Make shipping boring: CI, environments, observability, and a rollback that has been tried.",
+      "deliverables": [
+        "A CI pipeline that runs the tests on every change",
+        "Reproducible environments",
+        "Monitoring, alerts and a tested rollback"
+      ],
+      "calibration": "Set up CI on every push and a one-command rollback. Pass if both are demonstrated, not described.",
+      "stack": [
+        {
+          "source": "addyosmani/agent-skills",
+          "skills": [
+            "ci-cd-and-automation",
+            "observability-and-instrumentation",
+            "shipping-and-launch"
+          ],
+          "use": "Pipelines, instrumentation, the launch checklist"
+        },
+        {
+          "source": "wshobson/agents",
+          "plugins": [
+            "cicd-automation@claude-code-workflows",
+            "deployment-strategies@claude-code-workflows",
+            "observability-monitoring@claude-code-workflows"
+          ],
+          "skills": [
+            "cicd-automation",
+            "deployment-strategies",
+            "observability-monitoring"
+          ],
+          "use": "Deployment strategy and monitoring on larger infrastructure"
+        },
+        {
+          "source": "garrytan/gstack",
+          "skills": [
+            "/ship",
+            "/canary"
+          ],
+          "use": "Release and canary checks"
+        }
+      ]
+    },
+    "head-of-sales": {
+      "title": "Head of Sales",
+      "parent": "cmo",
+      "mission": "Turn the positioning into a pipeline: find the right accounts, start conversations, and learn why deals are won or lost.",
+      "deliverables": [
+        "A target-account list with the reason for each",
+        "Outreach sequences and call preparation",
+        "Battlecards and objection handling",
+        "A weekly pipeline review"
+      ],
+      "calibration": "Build a list of ten target accounts with a one-line reason each and draft the first message to one of them. Nothing is sent. Pass if the CMO would send that message.",
+      "stack": [
+        {
+          "source": "anthropics/knowledge-work-plugins",
+          "plugins": [
+            "sales@knowledge-work-plugins"
+          ],
+          "skills": [
+            "account-research",
+            "lead-triage",
+            "draft-outreach",
+            "call-prep",
+            "handle-objection",
+            "close-plan",
+            "pipeline-review",
+            "forecast"
+          ],
+          "use": "The daily sales loop, from research to pipeline review"
+        },
+        {
+          "source": "coreyhaines31/marketingskills",
+          "skills": [
+            "prospecting",
+            "cold-email",
+            "sales-enablement",
+            "revops"
+          ],
+          "use": "Outbound sequences and sales collateral, in the product-marketing context"
+        },
+        {
+          "source": "phuryn/pm-skills",
+          "plugins": [
+            "pm-go-to-market@pm-skills"
+          ],
+          "skills": [
+            "competitive-battlecard",
+            "ideal-customer-profile"
+          ],
+          "use": "Battlecards; checking an account against the ICP"
+        },
+        {
+          "source": "wondelai/skills",
+          "plugins": [
+            "sales-influence@wondelai-skills",
+            "product-strategy@wondelai-skills"
+          ],
+          "skills": [
+            "predictable-revenue",
+            "influence-psychology",
+            "negotiation"
+          ],
+          "use": "Outbound method and negotiation"
+        },
+        {
+          "source": "blader/humanizer",
+          "skills": [
+            "humanizer"
+          ],
+          "use": "Before any message leaves your folder"
+        }
+      ]
+    },
+    "head-of-growth": {
+      "title": "Head of Growth",
+      "parent": "cmo",
+      "mission": "Find what moves acquisition and activation, by running small measured experiments.",
+      "deliverables": [
+        "A funnel audit",
+        "An experiment backlog ranked by expected impact and cost",
+        "A readout of each experiment"
+      ],
+      "calibration": "Audit the signup funnel and propose three experiments. Pass if each names its metric, its expected effect, and what it costs to run.",
+      "stack": [
+        {
+          "source": "coreyhaines31/marketingskills",
+          "skills": [
+            "cro",
+            "signup",
+            "onboarding",
+            "ab-testing",
+            "analytics",
+            "conversion-tracking",
+            "attribution"
+          ],
+          "use": "Funnel audits, experiments and measurement"
+        },
+        {
+          "source": "wondelai/skills",
+          "plugins": [
+            "marketing-cro@wondelai-skills"
+          ],
+          "skills": [
+            "cro-methodology"
+          ],
+          "use": "Structuring an experiment"
+        },
+        {
+          "source": "anthropics/knowledge-work-plugins",
+          "plugins": [
+            "marketing@knowledge-work-plugins"
+          ],
+          "skills": [
+            "performance-report"
+          ],
+          "use": "The readout the CMO takes to the board"
+        }
+      ]
+    },
+    "head-of-content": {
+      "title": "Head of Content",
+      "parent": "cmo",
+      "mission": "Earn attention with content people search for and want to read, in the brand's voice.",
+      "deliverables": [
+        "A content plan tied to search demand",
+        "Finished articles and social posts",
+        "An SEO audit after each release of the site"
+      ],
+      "calibration": "Produce the first month's content plan and one finished article. Pass if the article reads as written by a person who knows the customer.",
+      "stack": [
+        {
+          "source": "coreyhaines31/marketingskills",
+          "skills": [
+            "content-strategy",
+            "copywriting",
+            "copy-editing",
+            "seo-audit",
+            "ai-seo",
+            "programmatic-seo",
+            "schema",
+            "social"
+          ],
+          "use": "Planning, writing and optimising content"
+        },
+        {
+          "source": "AgriciDaniel/claude-seo",
+          "skills": [
+            "seo-content-brief",
+            "seo-cluster",
+            "seo-technical",
+            "seo-geo"
+          ],
+          "use": "Content briefs, topic clusters, technical and AI-search audits"
+        },
+        {
+          "source": "blader/humanizer",
+          "skills": [
+            "humanizer"
+          ],
+          "use": "Last pass on every piece"
+        }
+      ]
+    },
+    "financial-analyst": {
+      "title": "Financial Analyst",
+      "parent": "cfo",
+      "mission": "Build and maintain the financial model, and report actuals against it.",
+      "deliverables": [
+        "`board/cfo/model.xlsx` with an assumptions sheet",
+        "Three scenarios",
+        "A monthly budget-versus-actual note"
+      ],
+      "calibration": "Build the twelve-month model from the charter's assumptions with three scenarios. Pass if every output traces to an assumption cell and the model survives an audit.",
+      "stack": [
+        {
+          "source": "anthropics/skills",
+          "skills": [
+            "xlsx"
+          ],
+          "use": "Every model is a real spreadsheet with formulas"
+        },
+        {
+          "source": "anthropics/financial-services",
+          "plugins": [
+            "financial-analysis@claude-for-financial-services"
+          ],
+          "skills": [
+            "3-statement-model",
+            "audit-xls"
+          ],
+          "use": "Building the model; auditing it before the CFO sees it"
+        },
+        {
+          "source": "alirezarezvani/claude-skills",
+          "plugins": [
+            "finance-skills@claude-code-skills"
+          ],
+          "skills": [
+            "financial-analyst",
+            "saas-metrics-coach"
+          ],
+          "use": "Ratios, SaaS metrics and their benchmarks"
+        },
+        {
+          "source": "wshobson/agents",
+          "plugins": [
+            "startup-business-analyst@claude-code-workflows"
+          ],
+          "skills": [
+            "startup-financial-modeling",
+            "startup-metrics-framework"
+          ],
+          "use": "Startup-shaped projections"
+        }
+      ]
+    },
+    "pricing-lead": {
+      "title": "Pricing Lead",
+      "parent": "cfo",
+      "mission": "Find the price and packaging that customers accept and the model needs.",
+      "deliverables": [
+        "Pricing options with the reasoning for each",
+        "A pricing-page brief for the CMO and Head of Design",
+        "A plan to test the price"
+      ],
+      "calibration": "Propose three pricing structures. Pass if each states the customer it favours, the metric it optimises, and its effect on the model.",
+      "stack": [
+        {
+          "source": "phuryn/pm-skills",
+          "plugins": [
+            "pm-product-strategy@pm-skills"
+          ],
+          "skills": [
+            "pricing-strategy",
+            "monetization-strategy"
+          ],
+          "use": "Generating and comparing pricing options"
+        },
+        {
+          "source": "coreyhaines31/marketingskills",
+          "skills": [
+            "pricing"
+          ],
+          "use": "Packaging and the pricing page"
+        },
+        {
+          "source": "alirezarezvani/claude-skills",
+          "plugins": [
+            "commercial-skills@claude-code-skills"
+          ],
+          "skills": [
+            "pricing-strategist",
+            "commercial-forecaster"
+          ],
+          "use": "Price tests and their revenue effect"
+        }
+      ]
+    },
+    "controller": {
+      "title": "Controller",
+      "parent": "cfo",
+      "mission": "Keep the books true once money moves: cash, invoices, reconciliation, month-end.",
+      "deliverables": [
+        "A monthly cash-flow snapshot",
+        "Reconciled accounts",
+        "A list of overdue invoices and what was done about each"
+      ],
+      "calibration": "Produce this month's cash-flow snapshot and list every unreconciled item. Pass if the CFO can tie it to the bank balance.",
+      "stack": [
+        {
+          "source": "anthropics/knowledge-work-plugins",
+          "plugins": [
+            "finance@knowledge-work-plugins",
+            "small-business@knowledge-work-plugins"
+          ],
+          "skills": [
+            "reconciliation",
+            "journal-entry",
+            "close-management",
+            "financial-statements",
+            "cash-flow-snapshot",
+            "invoice-chase",
+            "tax-prep"
+          ],
+          "use": "The monthly close and the cash position"
+        },
+        {
+          "source": "anthropics/skills",
+          "skills": [
+            "xlsx"
+          ],
+          "use": "Workpapers"
+        }
+      ]
+    },
+    "head-of-project": {
+      "title": "Head of Project",
+      "parent": "coo",
+      "mission": "Keep the plan true: who does what by when, what depends on what, and which date is at risk first.",
+      "deliverables": [
+        "A milestone roadmap with owners and dependencies",
+        "`board/STATUS.md` kept current",
+        "A weekly status report and a risk register"
+      ],
+      "calibration": "Turn the approved plan into a milestone roadmap with owners, dependencies and the critical path. Pass if it names the first date at risk and why.",
+      "stack": [
+        {
+          "source": "phuryn/pm-skills",
+          "plugins": [
+            "pm-execution@pm-skills"
+          ],
+          "skills": [
+            "outcome-roadmap",
+            "sprint-plan",
+            "pre-mortem",
+            "stakeholder-map",
+            "retro"
+          ],
+          "use": "Roadmap, sprint plans, pre-mortems and retros"
+        },
+        {
+          "source": "mattpocock/skills",
+          "skills": [
+            "to-tickets",
+            "triage",
+            "wayfinder",
+            "handoff"
+          ],
+          "use": "Cutting work into tickets, triaging incoming work, handing off between sessions"
+        },
+        {
+          "source": "anthropics/knowledge-work-plugins",
+          "plugins": [
+            "operations@knowledge-work-plugins",
+            "productivity@knowledge-work-plugins",
+            "product-management@knowledge-work-plugins"
+          ],
+          "skills": [
+            "status-report",
+            "risk-assessment",
+            "task-management",
+            "sprint-planning",
+            "stakeholder-update"
+          ],
+          "use": "Status reports, the risk register, task tracking"
+        },
+        {
+          "source": "alirezarezvani/claude-skills",
+          "plugins": [
+            "pm-skills@claude-code-skills"
+          ],
+          "skills": [
+            "senior-pm",
+            "scrum-master"
+          ],
+          "use": "Portfolio and sprint health checks"
+        }
+      ]
+    },
+    "legal-counsel": {
+      "title": "Legal and Compliance Lead",
+      "parent": "coo",
+      "mission": "Spot legal and compliance exposure early and prepare drafts for a qualified lawyer to review. Never the final word on a legal question.",
+      "deliverables": [
+        "A list of the legal documents the product needs before launch",
+        "First drafts for lawyer review",
+        "A compliance checklist with open items"
+      ],
+      "calibration": "List the legal documents this product needs before launch and outline the privacy policy. Pass if each item says why it applies to this product.",
+      "stack": [
+        {
+          "source": "anthropics/knowledge-work-plugins",
+          "plugins": [
+            "legal@knowledge-work-plugins"
+          ],
+          "skills": [
+            "review-contract",
+            "triage-nda",
+            "compliance-check",
+            "legal-risk-assessment"
+          ],
+          "use": "Triage of contracts and compliance questions"
+        },
+        {
+          "source": "anthropics/claude-for-legal",
+          "plugins": [
+            "commercial-legal@claude-for-legal",
+            "privacy-legal@claude-for-legal"
+          ],
+          "skills": [
+            "vendor-agreement-review",
+            "saas-msa-review",
+            "dpa-review",
+            "pia-generation"
+          ],
+          "use": "Vendor agreements, data-processing agreements, privacy impact assessments"
+        },
+        {
+          "source": "phuryn/pm-skills",
+          "plugins": [
+            "pm-toolkit@pm-skills"
+          ],
+          "skills": [
+            "privacy-policy",
+            "draft-nda"
+          ],
+          "use": "First drafts"
+        }
+      ]
+    },
+    "head-of-customer-success": {
+      "title": "Head of Customer Success",
+      "parent": "coo",
+      "mission": "Make sure customers get an answer and get value, and bring what they say back to the board.",
+      "deliverables": [
+        "A help centre",
+        "Reply drafts for incoming tickets",
+        "A monthly summary of what customers ask for and complain about"
+      ],
+      "calibration": "Write one help-centre article and draft replies to three realistic tickets. Pass if the COO would send them as written.",
+      "stack": [
+        {
+          "source": "anthropics/knowledge-work-plugins",
+          "plugins": [
+            "customer-support@knowledge-work-plugins"
+          ],
+          "skills": [
+            "ticket-triage",
+            "draft-response",
+            "customer-escalation",
+            "kb-article"
+          ],
+          "use": "The support loop"
+        },
+        {
+          "source": "alirezarezvani/claude-skills",
+          "plugins": [
+            "business-growth-skills@claude-code-skills"
+          ],
+          "skills": [
+            "customer-success-manager"
+          ],
+          "use": "Health scores and churn risk"
+        },
+        {
+          "source": "blader/humanizer",
+          "skills": [
+            "humanizer"
+          ],
+          "use": "Before any reply goes to a customer"
+        }
+      ]
+    },
+    "ux-researcher": {
+      "title": "UX Researcher",
+      "parent": "head-of-design",
+      "mission": "Replace the board's assumptions about users with evidence.",
+      "deliverables": [
+        "Interview guides and usability test plans",
+        "Syntheses of what users said, as themes with quotes",
+        "A list of assumptions that the evidence contradicts"
+      ],
+      "calibration": "Write an interview guide for the target user and synthesise three existing sources of feedback into themes. Pass if no question in the guide leads the witness.",
+      "stack": [
+        {
+          "source": "anthropics/knowledge-work-plugins",
+          "plugins": [
+            "design@knowledge-work-plugins"
+          ],
+          "skills": [
+            "user-research",
+            "research-synthesis"
+          ],
+          "use": "Planning research and synthesising it"
+        },
+        {
+          "source": "phuryn/pm-skills",
+          "plugins": [
+            "pm-product-discovery@pm-skills"
+          ],
+          "skills": [
+            "interview-script",
+            "opportunity-solution-tree"
+          ],
+          "use": "Interview scripts; mapping findings to opportunities"
+        },
+        {
+          "source": "wondelai/skills",
+          "plugins": [
+            "product-strategy@wondelai-skills"
+          ],
+          "skills": [
+            "mom-test"
+          ],
+          "use": "Asking questions people cannot answer politely"
+        }
+      ]
+    },
+    "design-system-lead": {
+      "title": "Design System Lead",
+      "parent": "head-of-design",
+      "mission": "Build and guard the design system: tokens and components that make every screen consistent by default.",
+      "deliverables": [
+        "`board/design/design-system.md` and the tokens in code",
+        "Core components with all their states",
+        "An audit of each new screen against the system"
+      ],
+      "calibration": "Build the tokens and three core components. Pass if they clear the audit with no blocking finding.",
+      "stack": [
+        {
+          "source": "pbakaus/impeccable",
+          "skills": [
+            "impeccable"
+          ],
+          "use": "Documenting the system; auditing and polishing components"
+        },
+        {
+          "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+          "skills": [
+            "ui-ux-pro-max"
+          ],
+          "use": "Looking up palettes, pairings and rules when defining tokens"
+        },
+        {
+          "source": "jakubkrehel/skills",
+          "skills": [
+            "better-typography",
+            "better-colors",
+            "better-layout",
+            "better-accessibility"
+          ],
+          "use": "Tuning the type scale, the colour system and spacing"
+        },
+        {
+          "source": "anthropics/knowledge-work-plugins",
+          "plugins": [
+            "design@knowledge-work-plugins"
+          ],
+          "skills": [
+            "design-system",
+            "design-handoff"
+          ],
+          "use": "Auditing for hard-coded values; handoff specs"
+        }
+      ]
+    },
+    "motion-designer": {
+      "title": "Motion Designer",
+      "parent": "head-of-design",
+      "mission": "Give the product motion that explains and delights without slowing anyone down.",
+      "deliverables": [
+        "Motion principles for the product",
+        "The key interactions, animated",
+        "A motion review of each release"
+      ],
+      "calibration": "Animate the product's key interaction. Pass if it holds 60 fps on a mid-range phone and respects reduced-motion.",
+      "stack": [
+        {
+          "source": "emilkowalski/skills",
+          "skills": [
+            "emil-design-eng",
+            "animate",
+            "choreograph",
+            "review-animations",
+            "animation-performance",
+            "gestures"
+          ],
+          "use": "Deciding what to animate, building it, reviewing it"
+        },
+        {
+          "source": "greensock/gsap-skills",
+          "skills": [
+            "gsap-core",
+            "gsap-timeline",
+            "gsap-scrolltrigger",
+            "gsap-performance"
+          ],
+          "use": "Timelines and scroll scenes when GSAP is the library"
+        },
+        {
+          "source": "remotion-dev/skills",
+          "skills": [
+            "remotion-best-practices"
+          ],
+          "use": "Video: launch films and explainers"
+        }
+      ]
+    }
+  }
+}

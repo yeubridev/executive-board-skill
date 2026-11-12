@@ -1,0 +1,16 @@
+{
+  "name": "executive-board",
+  "owner": { "name": "yeubridev" },
+  "metadata": {
+    "description": "The executive-board plugin: six executive agents, one skill, curated skill stacks, and sub-agent hiring."
+  },
+  "plugins": [
+    {
+      "name": "executive-board",
+      "source": "./",
+      "description": "Run a project as an executive board of six agents that decide, build and launch a product, each with a curated skill stack and the ability to hire and train sub-agents.",
+      "version": "1.0.0",
+      "license": "MIT"
+    }
+  ]
+}

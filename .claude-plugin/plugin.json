@@ -1,0 +1,10 @@
+{
+  "name": "executive-board",
+  "version": "1.0.0",
+  "description": "Run a project as an executive board: CEO, CTO, CMO, CFO, COO and Head of Design agents that take the founding decisions and build a product from idea to launch, each with a curated stack of best-in-class skills and the ability to hire and train sub-agents.",
+  "author": { "name": "yeubridev", "url": "https://github.com/yeubridev" },
+  "homepage": "https://github.com/yeubridev/executive-board-skill",
+  "repository": "https://github.com/yeubridev/executive-board-skill",
+  "license": "MIT",
+  "keywords": ["executive-board", "c-suite", "ceo", "cto", "cmo", "cfo", "coo", "design", "multi-agent", "subagents", "startup", "product"]
+}
